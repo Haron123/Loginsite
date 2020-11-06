@@ -8,16 +8,21 @@ body {
   background-color: #2F2F34;
   margin-bottom: 20pt;
   
+
+  
+  
 }
 
 .topnav a {
+  font-weight: bolder;
   float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
   font-family: inherit;
+ 
 }
 
 .topnav a:hover {
@@ -27,7 +32,8 @@ body {
 }
 
 .topnav a {
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 0.2s, background-color 0.2s;
+ 
 }
 
 .topnav a.active {
@@ -47,12 +53,20 @@ body {
     padding: 14px 16px;
 }
 
+.profile {
+    margin-left: 0px;
+}
+
+       
+                            
+
+
 input[type=submit] {
   width: 190px;
-  background-color: #FBB681;
+  background-color: #FF9651;
   color: white;
   padding: 14px 20px;
-  margin: 5px 0;
+  margin: 0px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -62,7 +76,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #FBA881;
+  background-color: #FFA161;
 }
 
 input[type=text] {
@@ -87,12 +101,169 @@ label {
     font-weight: 600;
 }
 
-.profile {
-    margin-left: 0px;
+
+ .dropdown {
+
+  overflow: hidden;
+  z-index: 100;
+  
+}
+
+.dropdown .dropbtn {
+  float: right;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin-right: 20px;
+  
+  
 }
 
 
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 45px;
+  min-width: 160px;
+  
+}
+
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  
+  
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  
+  
+}
+
+.dropdown:hover .dropdown-content {
+
+  display: block;
+  
+    
+  
+  
+}
+
+.dropdown:hover .firstdrop {
+
+  display: block;
+  z-index: 1;  
+    animation: fadein 0.2s;
+
+
+}
+.dropdown:hover .seconddrop {
+
+  display: block;
+    
+    animation: fadein 0.4s;
+    
+
+
+}
+.dropdown:hover .thirddrop {
+
+  display: block;
+    
+    animation: fadein 0.6s;
+    
+
+
+}
+
+     @keyframes fadein {
+       from { transform: rotate(90deg); background-color: #FBB681;}
+        to   { transform: rotate(0deg); background-color: #f9f9f9}
+        
+        
+    }
+    
+    
+    
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+
+  margin-top: 50px;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #FBB681;
+}
+   
+.addtable {
+    
+   
+} 
+
+.marginbody {
+     margin-left: 15%;
+}
+
+.Newbutton {
+   
+  width: 190px;
+  background-color: #FF9651;
+  color: white;
+  padding: 20px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+
+
+}                         
+.Newbutton:hover {
+  background-color: #FFA161;
+}
+
+.Newbutton1 {
+
+  width: 100px;
+  background-color: #FF9651;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+
+
+}
+.Newbutton1:hover {
+  background-color: #FFA161;
+}
 
 
 

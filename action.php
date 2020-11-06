@@ -45,7 +45,7 @@ if(password_verify($pass, $row['password'])) {
 echo "You Successfully logged in  "   ; 
 session_start();
 $_SESSION["name"] = $name; 
-header( "Refresh:1; url=index.php", true, 303);
+header("Location: index.php", true, 303);
 
    
    
@@ -53,7 +53,7 @@ header( "Refresh:1; url=index.php", true, 303);
 
  echo "<div>wrong pass</div>";
 
- header( "Refresh:1; url=Login.html", true, 303);
+header("Location: Login.php", true, 301); 
     
 }
 

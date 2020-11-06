@@ -1,9 +1,9 @@
  function Login() {
-  window.location = "login.html";
+  window.location = "login.php";
  }
 
  function Register() {
-  window.location = "register.html";
+  window.location = "register.php";
  }
  
  function MainPage() {
@@ -12,4 +12,14 @@
  
  function Profile() {
   window.location = "Profile.php";
+ }
+
+ function Logout()  {
+  window.location = "Logout.php";  
+ }
+
+ 
+ function owo() {
+     
+     alert("didnt ask");
  }

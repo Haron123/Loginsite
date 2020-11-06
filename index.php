@@ -1,6 +1,6 @@
-<?php 
+<?php
  error_reporting(0);
-     session_start();
+ session_start();
  ?>
 <html>
 <head>
@@ -11,30 +11,45 @@
 
 </head>
 
-<body>
+<body onload="overlayindex()">
      <div class="topnav">
-      <a onclick="Login()">Login</a>
-      <a onclick="Register()">Register</a>
-      <?php if ($_SESSION['name'] !== null){ ?>
-        <a class="profile" onclick="Profile()" >owo</a>
-      <?php } ?> 
-      
-      </div>
+      <a onclick="MainPage()">Mainpage</a>
+      <?php 
+      include 'topnav.php';
+       ?>
 
+      </div>  
+      
       <header style="text-align: center;">
       <b style="font-size: 30px;">Main Page</b>
       </header>
 
       <?php
-    
-     echo " <br /> Hello " . $_SESSION["name"] . "!";
-
-
+     echo " <br /> Hello " . htmlspecialchars($_SESSION["name"]) . "!";
       ?>
-      
-       
+                               
+     <div class="owo"></div>
+
+    <style>
+    .owo {
+    width: 50px;
+    height: 50px;  
+    }
+    
+    .owo:hover {
+    background-color: #FF0000; 
+  
+  transform: rotate(60deg);
+  transition: background-color 2s,  transform 2s;
+    }
+   
+    
 
 
+
+    
+    
+    </style>
 
  </body>
 
