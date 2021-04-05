@@ -26,7 +26,7 @@
      return $randomString; }
 
     $folder = generateRandomString();
-    $newname = $folder;
+    $foldername = $folder;
 
     mkdir("uploads/".$folder);
 
@@ -74,10 +74,10 @@
      
      
      
-     $link =  "https://localhost/";
+     $link =  "https://localhost".$uploadDirectory.$fileName;
 
-     @$sql = $connect->prepare("INSERT INTO uploads (ininame, newname, link) VALUES(?, ?, ?)");
-     @$sql->bind_param("sss", $fileName, $newname, $link);
+     @$sql = $connect->prepare("INSERT INTO uploads (ininame, foldername, link) VALUES(?, ?, ?)");
+     @$sql->bind_param("sss", $fileName, $foldername, $link);
 
     
     $sql->execute();
@@ -88,7 +88,7 @@
     
     
     $_SESSION["uploaded"] = true;
-    $_SESSION["link"] = "localhost".$uploadDirectory.$fileName;
+    $_SESSION["link"] = $link;
     header("Location: profile.php", true, 301);
 
 ?>
