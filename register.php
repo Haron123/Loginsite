@@ -14,6 +14,7 @@ if(empty($_SESSION['name'])) {
 <head>
 <script language="javascript" type="text/javascript" src="scripts.js"></script>
 <link rel="stylesheet" href="style.css" type="text/css" /> 
+<link rel="stylesheet" href="style.css?v=3.4.1"> 
 
 <title>Register</title>
 
@@ -32,17 +33,24 @@ if(empty($_SESSION['name'])) {
     
     
 
-    <div class="body">
-     <b style="font-size: 25px;">Register:</b> 
-     <br />
-     <br />
-    
+  
+       <img style="background-repeat: no-repeat; position: absolute; top: 590px;" src="flowerbg.png" width="100%" height="352" alt="" />
+    <div class="body"  style=" position: absolute; top: 570px; left: 15%; font-family: cursive;">
+   
       <form name="Register"  action="entry.php" onsubmit="return validate()" method="POST">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" placeholder="Name"><br><br>
-      <label for="pass">Password:</label><br>
-      <input type="text" id="pass" name="pass" placeholder="Password"><br><br>
+      <b style="font-size: 25px;">Register:</b> 
+      <label for="name" style="margin-left: 100px; font-size: 20px;">Name:</label>
+      <input style="margin-right: 100px;" type="text" id="name" name="name" placeholder="Name">
+      <label for="pass" style="font-size: 20px;" >Password:</label>
+      <input style="margin-right: 100px;" type="text" id="pass" name="pass" placeholder="Password">
+      <input class="submit" type="submit" value="Register" name="submit">    
+      <div id="textbox" style="color: #FF0000;">
+      
+    </div>  
+      
+      
       <div id="textbox" style="color: #FF0000;"></div>
+      
       <?php if($_SESSION["Nametaken"] == true) {
           
              echo "<div style='color : #FF0000'>Name Already Taken</div>";
@@ -50,7 +58,7 @@ if(empty($_SESSION['name'])) {
            }
            
        ?>
-      <input class="submit" type="submit" value="Register" name="submit">    
+      
       </form>
     </div>
      

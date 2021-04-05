@@ -50,8 +50,9 @@ $connect->close();
 <head>
 <script language="javascript" type="text/javascript" src="scripts.js"></script>
 <link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style.css?v=3.4.1"> 
 
-<title>Register</title>
+<title>Panel</title>
 
      <div class="topnav">
      <a onclick="MainPage()">Mainpage</a>
@@ -63,7 +64,7 @@ $connect->close();
 <div class="marginbody">  
      
 
-    <?php     
+    <?php      /*
     echo " <p style=' font-family: inherit; font-size: 40px; color: #443834; font-variant: small-caps;'>Welcome ". $_SESSION['name']. "!</p>"; 
     ?>                                                                                                          
      <p style=" font-family: inherit; font-size: 40px; color: #443834; font-variant: small-caps;">Your panel</p>
@@ -78,8 +79,8 @@ $connect->close();
     
      
     
-
-     <?php 
+   
+     <?php  
      while ($row = $res->fetch_assoc()) {
      $date = new Datetime($row["deadline"]); 
      
@@ -89,17 +90,17 @@ $connect->close();
      <tr>
      <td>".htmlspecialchars($row["OrderID"])."</td>
      <td>". htmlspecialchars($row["buyer"]) ."</td>
-     <td>". htmlspecialchars($row["artist"]);."</td>
+     <td>". htmlspecialchars($row["artist"]) ."</td>
      <td>".$date->format('M d H:i:s, Y')."</td> 
      </tr> 
      "; 
      
-    } ?>
+    } */ ?>
+         
     
     
-     
      </table>
-     
+      <!--       
      <button id="addtablebtn" style="margin-top: 40px;" class="Newbutton" onclick=" 
      var visible = 1;
      console.log(document.getElementById('addtable').style.visibility);
@@ -149,6 +150,7 @@ $connect->close();
                          
       <div id="removetable" style="display: none;">        
       <form  class="removetable" name="removetable"  action="deletetable.php" onsubmit="return validate()" method="POST" style=" margin-top: 50px;">
+
       <label for="OrderID">OrderID:</label>
       <input type="text" id="OrderID" name="OrderID" placeholder="OrderID">
       <div id="textbox" style="color: #FF0000;"></div>
@@ -157,9 +159,46 @@ $connect->close();
       </div> 
       
   </div>          
-     
-
+    --> 
+         <div class="body"  style=" position: absolute; top: 570px; left: 20%; font-family: cursive;">
+    <form  style="margin-top: 30px;  font-family: cursive; font-size: 30px;" action="upload.php" method="post" enctype="multipart/form-data">
+        Upload a File:<a style="margin-right: 30px;"></a>
+    <input  style="font-size: 20px; color: ;" type="file" name="the_file" id="fileToUpload">       
+        <input  onclick="uploaded()" id="upload" type="submit" name="submit" value="Start Upload">    
+    </form>
+    
+      <?php if($_SESSION["uploaded"] == true) {
+           echo "<div > Uploaded ! File link : ". $_SESSION['link']. "</div>";
+           
+           
+           
+           $_SESSION['uploaded'] = false;
+        } ?>
+    
+    <div id="uploaded" ></div>
+    
+       <!--   <p><a href="uploads\Jacob1's Mod.exe">Download JPG file</a></p>          -->
+          </div>
+          
+          <div id="filename"> <?php echo $_SESSION["filename"];?> </div>
+          
+       
 </body>     
+     
+    <script>
+   function uploaded(){
+   
+       
+   document.getElementById('uploaded').innerHTML = "File has been Uploaded. Link = " + document.getElementById('filename').innerHTML;    
+       
+       
+   } 
+    
+    </script> 
+     
+     
+     
+     
      
      
 </head>     
