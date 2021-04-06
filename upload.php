@@ -74,7 +74,7 @@
      
      
      
-     $link =  "https://localhost".$uploadDirectory.$fileName;
+     $link =  "https://haron.gay".$uploadDirectory.$fileName;
 
      @$sql = $connect->prepare("INSERT INTO uploads (ininame, foldername, link) VALUES(?, ?, ?)");
      @$sql->bind_param("sss", $fileName, $foldername, $link);
